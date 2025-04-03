@@ -22,6 +22,8 @@ const Card = ({ src, height, width,url,title,tech }) => {
                     opacity: hover?1:0,
                     scale: hover?0.93:1
                 }}
+                onHoverStart={() => { setHover(true) }}
+                onHoverEnd={() => { setHover(false) }}
                 className={`absolute top-0 text-center font-bold flex justify-center border-1 border-black items-center size-full ${dark ? ' bg-[rgba(13,13,13,0.63)]' : 'bg-white/70'} `}>
                 <div className={`flex  flex-col   justify-center`}>
                     <div>{title}</div>
@@ -31,8 +33,6 @@ const Card = ({ src, height, width,url,title,tech }) => {
                     </div>
                     <div className='mx-auto mt-3'>
                     <motion.button
-                        onHoverStart={() => { setHover(true) }}
-                        onHoverEnd={() => { setHover(false) }}
                         transition={{
                             duration: 0.4
                         }}
@@ -45,7 +45,7 @@ const Card = ({ src, height, width,url,title,tech }) => {
                             color: dark ? 'black' : 'white',
                         }}
                         className={`overflow-hidden p-1 px-3 z-10 relative border-2 ${dark ? 'border-white' : 'border-black'}font-extrabold`}
-                    >
+                        >
                         <motion.span
                             initial={{
                                 x: -12,
