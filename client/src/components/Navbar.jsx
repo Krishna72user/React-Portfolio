@@ -39,17 +39,18 @@ const Navbar = () => {
       <div className='h-[8em] '></div>
 
 
-      <div className={`fixed top-2 z-40 flex items-center backdrop-blur-sm lg:px-3 px-1 ${dark ? 'bg-slate-950/30' : "bg-white"} right-0`}>
+      <div className={`fixed top-2 z-50 flex items-center backdrop-blur-sm lg:px-3 px-1 ${dark ? 'bg-slate-950/30' : "bg-white"} right-0`}>
         {dark && <MdOutlineLightMode
           onClick={() => { setDark(false) }}
           className=' lg:size-16 size-13 md:size-15  p-2 hover:cursor-pointer right-9' />}
         {!dark && <MdDarkMode
           onClick={() => { setDark(true) }}
           className='lg:size-16 size-13 md:size-15 hover:cursor-pointer p-3' />}
-        <button onClick={() => {
+       {!open && <button onClick={() => {
           setOpen(true)
-        }} className='block hover:cursor-pointer p-2 md:p-4' ><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className='md:size-13 size-10' xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M15 6H1v1h14V6zm0 3H1v1h14V9z"></path></svg></button>
+        }} className='block hover:cursor-pointer z-50 p-2 md:p-4' ><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className='md:size-13 size-10' xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M15 6H1v1h14V6zm0 3H1v1h14V9z"></path></svg></button>}
 
+     {open && <IoMdClose onClick={() => { setOpen(false) }} className='hover:cursor-pointer px-3 p-3 size-15 md:size-20' />}
       </div>
 
       <motion.div
@@ -65,7 +66,6 @@ const Navbar = () => {
         className='fixed w-screen  z-40'
       >
         <div className='flex gap-15   flex-col h-screen   w-full items-center backdrop-blur-md  mx-auto  justify-center lg:text-6xl md:text-5xl text-4xl '>
-          <IoMdClose onClick={() => { setOpen(false) }} className='hover:cursor-pointer absolute lg:text-7xl text-4xl md:text-5xl top-6 right-5' />
           <NavLink className={({ isActive }) => (isActive ? "p-1 px-3 rounded-3xl transition-colors duration-300 text-orange-500  font-bold" : "hover:text-orange-500")} to='/'>
             Home
           </NavLink>

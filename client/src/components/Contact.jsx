@@ -58,12 +58,12 @@ const Contact = () => {
         className='w-full'
       />
       <div className='font-bold lg:text-6xl md:text-5xl text-4xl border-gray-300 pb-5 border-b-2 '>Contact Me</div>
-      <div className='flex justify-between flex-wrap gap-10  py-10'>
+      <div className='flex justify-between flex-wrap gap-10  '>
         <div className='w-[30em]'>
           <div >
             <div className='flex flex-col gap-8'>
               <div>
-                <div className='text-3xl'>Get in touch</div>
+                <div className='text-3xl pt-5'>Get in touch</div>
               </div>
               <div className='text-xl font-bold '>
                 Email : <a className='underline font-medium hover:text-blue-400 transition text-sm' href="mailto:krishnalaha1234567890@gmail.com">Krishna@gmail.com</a>
@@ -76,7 +76,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className='w-[35em] h-[60vh]'>
+        <div className='w-[35em]'>
           <form className='text-xl' onSubmit={async (e) => {
             e.preventDefault()
             const stat = await sendData(fnm.current.value, lnm.current.value, email.current.value, msg.current.value)

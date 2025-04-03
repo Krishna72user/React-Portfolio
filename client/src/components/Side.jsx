@@ -7,7 +7,7 @@ import { useTheme } from '../Context/ContextProvider';
 const Side = () => {
   const [dark,setDark] = useTheme()
   return (
-    <div className='flex justify-center pb-10'>
+    <div className='flex justify-center py-10'>
     <div className={`md:fixed md:top-[34vh] md:left-0 mx-auto md:w-[2.5em] backdrop-blur-md lg:w-[3em] rounded-2xl md:rounded-l-none md:rounded-r-2xl md:py-5 items-center md:gap-7 ${dark?"bg-white/10 ":"bg-gray-400/20 "} p-3 flex gap-2 md:text-xl text-[15px] lg:text-2xl md:flex-col`}> 
       <div className='text-[15px] md:hidden font-bold'>Follow me </div>
       <div className={`h-[0.1em] w-12 md:hidden ${dark?"bg-white":"bg-black"}`}> </div>
