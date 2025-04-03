@@ -53,7 +53,7 @@ const Navbar = () => {
      {open && <IoMdClose onClick={() => { setOpen(false) }} className='hover:cursor-pointer px-3 p-3 size-15 md:size-20' />}
       </div>
 
-      <motion.div
+     {open && <motion.div
         initial={{
           y: -900,
         }}
@@ -79,7 +79,7 @@ const Navbar = () => {
             Contact
           </NavLink>
         </div>
-      </motion.div>
+      </motion.div>}
     </>
 
   )

@@ -92,13 +92,15 @@ const Contact = () => {
             }
             
           }} >
-            <div className='flex gap-4 '>
-              <input ref={fnm} type="text" id='fname' name='fname' className='border-1 p-4 outline-0 w-full text-sm' placeholder='First name' />
-              <input ref={lnm} type="text" id='lname' name='lname' className='border-1 p-4 outline-0 text-sm w-full' placeholder='Last name' />
+            <div className='flex gap-4 py-5'>
+              <input ref={fnm} type="text" minLength={3} id='fname' name='fname' className='border-1 p-4 outline-0 w-full text-sm' placeholder='First name' />
+              <input ref={lnm} type="text" minLength={3} id='lname' name='lname' className='border-1 p-4 outline-0 text-sm w-full' placeholder='Last name' />
             </div>
-            <input ref={email} type="email" id='email' name='email' className='border-1 p-4 mt-4 outline-0 text-sm w-full' placeholder='Email' />
+            <input ref={email} type="email" minLength={5} id='email' name='email' className='border-1 p-4 mt-4 outline-0 text-sm w-full' placeholder='Email' />
             <textarea ref={msg} name="msg" id="msg" placeholder='Message' className='border-1 resize-none p-2 my-5 text-sm h-[10em] w-full outline-0' />
             <motion.button
+              type='submit'
+              disabled={email?.current?.value===""}
               onHoverStart={() => { setcHover(true) }}
               onHoverEnd={() => { setcHover(false) }}
               whileHover={{
