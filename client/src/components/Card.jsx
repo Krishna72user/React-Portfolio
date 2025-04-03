@@ -13,10 +13,14 @@ const Card = ({ src, height, width,url,title,tech }) => {
                     opacity: 0,
                     scale: 0.8
                 }}
-                whileHover={{
+                onClick={()=>{
+                    setHover(prev=>!prev);
+                   }
+                }
+                animate={{
                     cursor: "pointer",
-                    opacity: 1,
-                    scale: 0.93
+                    opacity: hover?1:0,
+                    scale: hover?0.93:1
                 }}
                 className={`absolute top-0 text-center font-bold flex justify-center border-1 border-black items-center size-full ${dark ? ' bg-[rgba(13,13,13,0.63)]' : 'bg-white/70'} `}>
                 <div className={`flex  flex-col   justify-center`}>
@@ -32,9 +36,9 @@ const Card = ({ src, height, width,url,title,tech }) => {
                         transition={{
                             duration: 0.4
                         }}
-                        whileHover={{
-                            color: dark ? 'white' : 'black',
-                        }}
+                        // whileHover={{
+                        //     color: dark ? 'white' : 'black',
+                        // }}
                         style={{
                             fontWeight: 'bold',
                             backgroundColor: dark?'white':'black',
@@ -47,14 +51,14 @@ const Card = ({ src, height, width,url,title,tech }) => {
                                 x: -12,
                                 y: 40,
                                 opacity: 0,
-                                backgroundColor: dark ? 'black' : 'white'
+                                backgroundColor: hover ? 'black' : 'white'
                             }}
                             
                             transition={{
-                                duration: 0.5
+                                duration: 1
                             }}
                             animate={{
-                                backgroundColor: dark ? 'black' : 'white',
+                                backgroundColor: hover ?dark? 'white':'black' : 'black',
                                 y: hover ? -4 : 40,
                                 opacity: hover ? 1 : 0,
                                 scaleY: hover ? 2 : 1

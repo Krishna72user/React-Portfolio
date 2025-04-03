@@ -35,11 +35,11 @@ const Navbar = () => {
     <>
 
       <div className={`h-2 z-50 fixed top-0 w-full ${dark ? 'bg-slate-950' : "bg-white"} `}></div>
-      <div className={`text-xl md:text-2xl z-50 font-bold fixed text-orange-500  ${dark ? open ? "bg-transparent" : 'bg-transparent' : "bg-white"} pl-2  pb-4 md:pb-7 md:top-4 top-0 left-0`}><span className='pl-4 md:pl-5 text-white pt-3  pb-3 bg-orange-500 rounded-full'>KRI</span>SHNA<span className='text-5xl text-red-800'>.</span></div>
+      <div className={`text-xl md:text-2xl z-50 font-bold fixed text-orange-500  ${dark ? open ? "bg-transparent" : 'bg-transparent' : "bg-transparent"} pl-2  pb-4 md:pb-7 md:top-4 top-0 left-0`}><span className='pl-4 md:pl-5 text-white pt-3  pb-3 bg-orange-500 rounded-full'>KRI</span>SHNA<span className='text-5xl text-red-800'>.</span></div>
       <div className='h-[8em] '></div>
 
 
-      <div className={`fixed top-2 z-50 flex items-center backdrop-blur-sm lg:px-3 px-1 ${dark ? 'bg-slate-950/30' : "bg-white"} right-0`}>
+      <div className={`fixed top-2 z-50 flex items-center backdrop-blur-sm lg:px-3 px-1 ${dark ? 'bg-slate-950/30' : "bg-white/5"} right-0`}>
         {dark && <MdOutlineLightMode
           onClick={() => { setDark(false) }}
           className=' lg:size-16 size-13 md:size-15  p-2 hover:cursor-pointer right-9' />}
