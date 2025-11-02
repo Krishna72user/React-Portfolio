@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Bottom = () => {
   return (
     <div className='w-full md:h-15 h-25 backdrop-blur-md z-50 px-5 justify-center  items-start font-bold flex md:justify-between md:items-center flex-col md:flex-row bottom-0 fixed'>
