@@ -79,7 +79,7 @@ const Home = () => {
               }}
               className={`w-full h-full -z-20   absolute`}></motion.span>
               <a
-               href="/resume.pdf" className='w-full  h-full' download={true}>
+               href="/Current_resume_new.pdf" className='w-full  h-full' download={true}>
                 Download CV
               </a>
           </motion.button>
